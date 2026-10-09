@@ -13,6 +13,56 @@
         "src_ip": "203.0.113.77"
       },
       "description": "Scanner probe"
+    },
+    {
+      "id": "S2-02",
+      "ts_utc": "2026-10-05T14:09:33Z",
+      "host": "web01",
+      "event_type": "web_sqli_attempt",
+      "match": {
+        "src_ip": "203.0.113.77"
+      },
+      "description": "SQLi attempt"
+    },
+    {
+      "id": "S2-03",
+      "ts_utc": "2026-10-05T14:14:02Z",
+      "host": "web01",
+      "event_type": "web_path_traversal",
+      "match": {
+        "src_ip": "203.0.113.77"
+      },
+      "description": "Path traversal"
+    },
+    {
+      "id": "S2-04",
+      "ts_utc": "2026-10-05T14:18:47Z",
+      "host": "web01",
+      "event_type": "web_webshell_upload",
+      "match": {
+        "src_ip": "203.0.113.77"
+      },
+      "description": "Webshell upload"
+    },
+    {
+      "id": "S2-05",
+      "ts_utc": "2026-10-05T14:20:15Z",
+      "host": "web01",
+      "event_type": "web_webshell_access",
+      "match": {
+        "src_ip": "203.0.113.77"
+      },
+      "description": "Webshell access"
+    },
+    {
+      "id": "S2-06",
+      "ts_utc": "2026-10-05T14:27:40Z",
+      "host": "web01",
+      "event_type": "web_request",
+      "match": {
+        "src_ip": "203.0.113.77"
+      },
+      "description": "Last request"
     }
   ],
   "triage_questions": [
@@ -26,6 +76,10 @@
     },
     {
       "q": "What was the first privileged command run?",
+      "answer": "N/A"
+    },
+    {
+      "q": "Which happened first: web01 webshell or db01 login?",
       "answer": "N/A"
     }
   ],

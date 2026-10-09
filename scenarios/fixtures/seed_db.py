@@ -46,7 +46,7 @@ def run_script(schema_path: Path, db_path: Path, s1_gt_path: Path):
     conn.close()
     
 if __name__ == "__main__":
-    schema_path = Path("src/forensic/schema.sql")
+    schema_path = Path(__file__).resolve().parents[2] / "src" / "forensic" / "schema.sql"
     db_path = Path("cases/s1_fake/case.db")
     s1_gt_path = Path("scenarios/s1_ssh_bruteforce/ground_truth.json")
     run_script(schema_path, db_path, s1_gt_path)

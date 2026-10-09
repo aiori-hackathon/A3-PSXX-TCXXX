@@ -8,7 +8,7 @@
       "id": "S1-01",
       "ts_utc": "2026-10-03T02:14:07Z",
       "host": "web01",
-      "event_type": "ssh_failed_login",
+      "event_type": "ssh_invalid_user",
       "match": {
         "src_ip": "203.0.113.50"
       },
@@ -23,7 +23,47 @@
         "src_ip": "203.0.113.50",
         "username": "deploy"
       },
-      "description": "First successful login (the answer to 'when did they get in?')"
+      "description": "First successful login"
+    },
+    {
+      "id": "S1-03",
+      "ts_utc": "2026-10-03T02:20:30Z",
+      "host": "web01",
+      "event_type": "session_opened",
+      "match": {
+        "username": "deploy"
+      },
+      "description": "Session opened"
+    },
+    {
+      "id": "S1-04",
+      "ts_utc": "2026-10-03T02:22:12Z",
+      "host": "web01",
+      "event_type": "sudo_command",
+      "match": {
+        "username": "deploy"
+      },
+      "description": "sudo bash"
+    },
+    {
+      "id": "S1-05",
+      "ts_utc": "2026-10-03T02:24:40Z",
+      "host": "web01",
+      "event_type": "user_added",
+      "match": {
+        "username": "support"
+      },
+      "description": "New user added"
+    },
+    {
+      "id": "S1-06",
+      "ts_utc": "2026-10-03T02:31:05Z",
+      "host": "web01",
+      "event_type": "session_closed",
+      "match": {
+        "username": "deploy"
+      },
+      "description": "Session closed"
     }
   ],
   "triage_questions": [
@@ -38,6 +78,10 @@
     {
       "q": "What was the first privileged command run?",
       "answer": "sudo /bin/bash"
+    },
+    {
+      "q": "Which happened first: web01 webshell or db01 login?",
+      "answer": "N/A"
     }
   ],
   "expected_parse_gaps": 4,
